@@ -1,0 +1,75 @@
+doctype html
+html
+    head
+        title Jade Page
+        link(rel='stylesheet', href='signup.css')
+        style(type='text/css').  
+          form {
+            border: 3px solid #f1f1f1;
+          }
+            /* Full-width inputs */
+           input[type=email], [type=number], input[type=password] {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 15px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+               box-sizing: border-box;
+          }
+          .firstname {
+              width: 50%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              box-sizing: border-box;
+          }
+          .lastname {
+              width: 48%;
+              padding: 12px 20px;
+              margin: 8px 0 0 5px;
+              display: inline-block;
+              border: 1px solid #ccc;
+              box-sizing: border-box;
+          }
+          .button {
+             background-color: #18768d;
+                color: white;
+                 padding: 14px 20px;
+                  margin: 15px 8px;
+                border: none;
+                    cursor: pointer;
+                 width: 100%;
+          }
+          .imgcontainer {
+              text-align: center;
+               margin: 24px 0 12px 0;
+          }
+          .container {
+              float: center;
+              width: 30%;
+              margin: auto;
+              padding: 0 50px;
+            margin-top: 5%;
+          }
+          .span {
+              color:green
+          }
+    body
+
+div
+  form(action='/signup',method='post')
+    div(class="imgcontainer")
+     h2 Sign up
+     div(class="container")
+        input(id='firstname',type='text',value='',required,placeholder='First name',name='firstname',class="firstname")
+        input(id='lastname',type='text',value='',required,placeholder='Last name',name='lastname',class ="lastname" )
+        input(id='email',type='email',value='',required,placeholder='Email',name='email')
+        input(id='password',type='password',value='',required,placeholder='Password',name='password')
+        spna At least 8 characters
+        input(id='mobile',type='number',value='',placeholder='Phone number',name='mobile')
+        input(id='showpass',type='checkbox',value='yes',name="showpass") 
+        span Subscribe to our newsletter
+        input(type='submit',value='Sign Up',data-transition='fade', data-theme='c', class='button')   
+        if(message)
+          span(class="span") #{message}
